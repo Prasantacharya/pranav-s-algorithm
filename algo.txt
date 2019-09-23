@@ -1,0 +1,36 @@
+class Main {
+  public static void main(String[] args) {
+    int[] array = {3,5,2,8,9,1,4};
+    int[] sortedArray = {0,0,0,0,0,0,0};
+    int smallest = array[0];
+      for(int j = 0; j < array.length; j++){
+
+        for(int i = 0; i < array.length; i++){// finds the smalles item
+          
+          if(j != 0 && array[i] <= sortedArray[j-1]){
+            //System.out.println("hello");
+            continue;
+          } else if(array[i] < smallest ){
+          smallest = array[i];
+          }
+        
+        }
+        sortedArray[j] = smallest;
+        smallest = array[0];
+        System.out.println();
+      }
+      for(int i = 0; i < array.length; i++){
+        System.out.println(sortedArray[i]);
+      }
+  }
+    /*
+      3 4 -2- -1- 5
+      
+      check if the number we are at is smaller than the last known smallest number:
+        if that is the case: we just skip
+
+      s = 1, 2, 3
+
+
+    */
+}
